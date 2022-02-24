@@ -10,10 +10,10 @@ import AddItem from './components/AddItem';
 const App = () => {
 
   const [items, setItems] = useState([
-    {id: uuid(), text: 'Los Salatos'},
-    {id: uuid(), text: 'Los Krebinettos'},
-    {id: uuid(), text: 'Los Vinos'},
-    {id: uuid(), text: 'Bajser'},
+    {id: uuid(), text: 'Salat'},
+    {id: uuid(), text: 'Oksekød'},
+    {id: uuid(), text: 'Cabernet Sauvignon'},
+    {id: uuid(), text: 'Franske Pilsner'},
   ]);
 
   const deleteItem = (id) => {
@@ -24,7 +24,7 @@ const App = () => {
 
   const addItem = (text) => {
     if(!text) {
-      Alert.alert("Fejl", "Skriv en genstand", [{ text: "OK" }]);
+      Alert.alert("Fejl", "Feltet var tomt. Hvad mangler du i køleskabet..?", [{ text: "OK" }]);
     } else {
       setItems(prevItems => {
         return [{id: uuid(), text}, ...prevItems];
