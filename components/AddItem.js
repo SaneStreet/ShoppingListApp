@@ -8,16 +8,19 @@ const AddItem = ({title, addItem}) => {
 
   const [text, setText] = useState('');
 
-  const onChange = (textValue) => setText(textValue);
+  //const onChange = (textValue) => setText(textValue);
 
   return (
     <View>
         <TextInput 
             placeholder='Tilføj til listen...' 
             style={styles.input} 
-            onChangeText={onChange} 
+            onChangeText={(textValue) => setText(textValue)}
         />
-        <TouchableOpacity style={styles.btn} onPress={() => addItem(text)}>
+        <TouchableOpacity 
+            style={styles.btn} 
+            onPress={() => addItem(text)}>
+            
             <Text style={styles.btnText}>
                 <Icon name="plus" size={20} /> Tilføj</Text>
         </TouchableOpacity>
